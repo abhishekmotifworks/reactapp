@@ -9,16 +9,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# Starter pipeline
-- task: AzureCLI@2
+- task: Docker@2
+  displayName: buildAndPush
   inputs:
-    azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      docker build -t sampleapp01.azurecr.io/testcicdrepo:tag
-      az acr login -n sampleapp01
-      docker push sampleapp01.azurecr.io/testcicdrepo:tag
+    containerRegistry: testcicd
+    repository: testcicdrepo
+    buildContext: '$(System.DefaultWorkingDirectory)'
+    tags: |
+     $(Build.BuildId)
+     latest
+
 
 - script: cat deploy.yaml
 
