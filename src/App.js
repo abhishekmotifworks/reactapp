@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Sample Application updated !!!!!
-          Updated "apply" command.
+          Trigger applied
         </p>
       </header>
     </div>
