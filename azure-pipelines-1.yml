@@ -22,21 +22,16 @@ steps:
 
 - script: cat deploy.yaml
 
-- task: Kubernetes@1
+- task: KubernetesManifest@1
   inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscriptionEndpoint: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureResourceGroup: 'reactapp'
-    kubernetesCluster: 'aks-reactapp'
+    action: 'deploy'
+    connectionType: 'kubernetesServiceConnection'
+    kubernetesServiceConnection: 'aks-service-conn'
     namespace: 'default'
-    command: 'apply'
-    useConfigurationFile: true
-    configuration: 'deploy.yaml'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-    azureSubscriptionEndpointForSecrets: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureContainerRegistry: 'sampleapp01.azurecr.io'
-    forceUpdate: false
+    manifests: 'deploy.yaml'
+    
+
+
 
 
 
