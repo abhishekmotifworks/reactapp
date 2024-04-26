@@ -16,9 +16,9 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      docker build -t sampleapp01.azurecr.io/testcicdrepo:latest
+      docker build -t sampleapp01.azurecr.io/testcicdrepo:tag
       az acr login -n sampleapp01
-      docker push sampleapp01.azurecr.io/testcicdrepo:latest
+      docker push sampleapp01.azurecr.io/testcicdrepo:tag
 
 - script: cat deploy.yaml
 
