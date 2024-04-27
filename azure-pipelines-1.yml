@@ -30,15 +30,15 @@ steps:
     artifactName: 'manifest'
     targetPath: '$(Pipeline.Workspace)/manifest'
 
-- task: KubernetesManifest@1
-  inputs:
-    action: 'createSecret'
-    connectionType: 'kubernetesServiceConnection'
-    kubernetesServiceConnection: 'aks-service-conn'
-    namespace: 'default'
-    secretType: 'dockerRegistry'
-    secretName: 'mysecret'
-    dockerRegistryEndpoint: 'testcicd'
+# - task: KubernetesManifest@1
+#   inputs:
+#     action: 'createSecret'
+#     connectionType: 'kubernetesServiceConnection'
+#     kubernetesServiceConnection: 'aks-service-conn'
+#     namespace: 'default'
+#     secretType: 'dockerRegistry'
+#     secretName: 'mysecret'
+#     dockerRegistryEndpoint: 'testcicd'
    
     
 - task: KubernetesManifest@1
