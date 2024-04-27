@@ -16,14 +16,15 @@ stages:
     displayName: Build
     pool:
       vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'testcicd'
-        repository: '$(imageRepo)'
-        command: 'buildAndPush'
-        Dockerfile: '$(System.DefaultWorkingDirectory)'
-        tags: |
-          $(tag)
-          latest
-    
+      steps:
+      - task: Docker@2
+        displayName: buildAndPush
+        inputs:
+          containerRegistry: 'testcicd'
+          repository: 'testcicdrepo'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          buildContext: '$(System.DefaultWorkingDirectory)'
+          tags: |
+            $(Build.BuildId)
+            latest
