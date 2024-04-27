@@ -1,38 +1,29 @@
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+resources:
+- repo: self
 
-steps:
-- task: Docker@2
-  displayName: buildAndPush
-  inputs:
-    containerRegistry: testcicd
-    repository: testcicdrepo
-    buildContext: '$(System.DefaultWorkingDirectory)'
-    tags: |
-     $(Build.BuildId)
-     latest
+variables:
+  imageRepo: sampleapp
+  tag: '$(Build.BuildId)'
 
-
-- script: cat deploy.yaml
-
-- task: KubernetesManifest@1
-  inputs:
-    action: 'deploy'
-    connectionType: 'kubernetesServiceConnection'
-    kubernetesServiceConnection: 'aks-service-conn'
-    namespace: 'default'
-    manifests: 'deploy.yaml'
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'testcicd'
+        repository: '$(imageRepo)'
+        command: 'buildAndPush'
+        Dockerfile: '$(System.DefaultWorkingDirectory)'
+        tags: |
+          $(tag)
+          latest
     
-
-
-
-
-
-
