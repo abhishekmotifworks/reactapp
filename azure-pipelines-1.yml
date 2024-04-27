@@ -5,7 +5,7 @@ resources:
 - repo: self
 
 variables:
-  imageRepo: sampleapp
+  imageRepo: testcicdrepo
   tag: '$(Build.BuildId)'
 
 stages:
