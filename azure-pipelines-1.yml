@@ -48,7 +48,7 @@ steps:
     kubernetesServiceConnection: 'aks-service-conn'
     namespace: 'default'
     manifests: '$(Pipeline.Workspace)/manifest/deploy.yaml'
-    containers: 'SampleApp01.azurecr.io/testcicdrepo:latest'
+    containers: 'SampleApp01.azurecr.io/testcicdrepo:$(Build.BuildId)'
 
 
 
