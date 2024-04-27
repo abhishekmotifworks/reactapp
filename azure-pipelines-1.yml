@@ -1,30 +1,28 @@
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
 - main
 
-resources:
-- repo: self
+pool:
+  vmImage: ubuntu-latest
 
-variables:
-  imageRepo: testcicdrepo
-  tag: '$(Build.BuildId)'
+steps:
+- task: Docker@2
+  displayName: buildAndPush
+  inputs:
+    containerRegistry: testcicd
+    repository: testcicdrepo
+    buildContext: '$(System.DefaultWorkingDirectory)'
+    tags: |
+     $(Build.BuildId)
+     latest
 
-stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-      steps:
-      - task: Docker@2
-        displayName: buildAndPush
-        inputs:
-          containerRegistry: 'testcicd'
-          repository: 'testcicdrepo'
-          command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
-          buildContext: '$(System.DefaultWorkingDirectory)'
-          tags: |
-            $(Build.BuildId)
-            latest
+    
+
+
+
+
+
+
