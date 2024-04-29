@@ -1,0 +1,5 @@
+appName: test-app
+
+image: ampleApp01.azurecr.io/testcicdrepo
+
+replica: 3
