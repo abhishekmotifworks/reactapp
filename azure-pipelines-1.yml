@@ -58,8 +58,9 @@ steps:
 - task: HelmDeploy@0
   inputs:
     command: 'package'
-    chartPath: 'mycharts' 
-  
+    chartPath: 'mycharts'
+    chartVersion: '$(Build.BuildId)'
+
 - task: HelmDeploy@0
   inputs:
     connectionType: 'Azure Resource Manager'
@@ -68,5 +69,5 @@ steps:
     kubernetesCluster: 'aks-reactapp'
     namespace: 'default'
     command: 'upgrade'
-    chartType: 'Name'
-    chartName: 'mycharts'
+    chartType: 'FilePath'
+    chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-*.tgz'
