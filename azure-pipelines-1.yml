@@ -70,4 +70,4 @@ steps:
     namespace: 'default'
     command: 'upgrade'
     chartType: 'FilePath'
-    chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-*.tgz'
+    chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId)).tgz'
