@@ -57,30 +57,6 @@ steps:
 
 - task: HelmDeploy@0
   inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureResourceGroup: 'reactapp'
-    kubernetesCluster: 'aks-reactapp'
-    namespace: 'default'
-    command: 'init'
-    upgradetiller: true
-    waitForExecution: true
-    arguments: --client-only
-
-- task: HelmDeploy@0
-  inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureResourceGroup: 'reactapp'
-    kubernetesCluster: 'aks-reactapp'
-    namespace: 'default'
-    command: 'install'
-    chartType: 'FilePath'
-    chartPath: 'mycharts'
-
-
-- task: HelmDeploy@0
-  inputs:
     command: 'package'
     chartPath: 'mycharts'
     chartVersion: '$(Build.BuildId)'
