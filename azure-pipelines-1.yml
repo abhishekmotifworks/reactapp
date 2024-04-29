@@ -65,5 +65,5 @@ steps:
     namespace: 'default'
     command: 'upgrade'
     chartType: 'Name'
-    chartName: '/mycharts'
+    chartName: 'mycharts'
     valueFile: 'values.yaml'
