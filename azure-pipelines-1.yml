@@ -65,15 +65,6 @@ steps:
     chartPath: 'mycharts'
     chartVersion: '$(Build.BuildId)'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      kubectl delete service test-app-service
-      kubectl delete deployment test-app
-
 - task: HelmDeploy@0
   inputs:
     connectionType: 'Azure Resource Manager'
@@ -85,6 +76,8 @@ steps:
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     releaseName: '$(Build.BuildId)'
+  
+
 # - task: HelmDeploy@0
 #   inputs:
 #     connectionType: 'Kubernetes Service Connection'
