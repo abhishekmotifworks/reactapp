@@ -8,6 +8,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  - name: System.Debug
+    value: true
+
 steps:
 - task: Docker@2
   displayName: buildAndPush
