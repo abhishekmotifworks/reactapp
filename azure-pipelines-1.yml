@@ -75,7 +75,6 @@ steps:
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
-    arguments: '--set app.kubernetes.io/managed-by=Helm meta.helm.sh/release-name=$(Build.BuildId) meta.helm.sh/release-namespace=default'
 # - task: HelmDeploy@0
 #   inputs:
 #     connectionType: 'Kubernetes Service Connection'
