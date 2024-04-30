@@ -61,13 +61,22 @@ steps:
     chartPath: 'mycharts'
     chartVersion: '$(Build.BuildId)'
 
+# - task: HelmDeploy@0
+#   inputs:
+#     connectionType: 'Azure Resource Manager'
+#     azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
+#     azureResourceGroup: 'reactapp'
+#     kubernetesCluster: 'aks-reactapp'
+#     namespace: 'default'
+#     command: 'upgrade'
+#     chartType: 'FilePath'
+#     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
 - task: HelmDeploy@0
   inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureResourceGroup: 'reactapp'
-    kubernetesCluster: 'aks-reactapp'
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceConnection: 'aks-service-conn'
     namespace: 'default'
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
+
