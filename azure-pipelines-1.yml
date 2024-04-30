@@ -45,14 +45,14 @@ steps:
 #     dockerRegistryEndpoint: 'testcicd'
    
 # For normal deployment without helm ## 
-- task: KubernetesManifest@1
-  inputs:
-    action: 'deploy'
-    connectionType: 'kubernetesServiceConnection'
-    kubernetesServiceConnection: 'aks-service-conn'
-    namespace: 'default'
-    manifests: '$(Pipeline.Workspace)/manifest/deploy.yaml'
-    containers: 'SampleApp01.azurecr.io/testcicdrepo:$(Build.BuildId)'
+# - task: KubernetesManifest@1
+#   inputs:
+#     action: 'deploy'
+#     connectionType: 'kubernetesServiceConnection'
+#     kubernetesServiceConnection: 'aks-service-conn'
+#     namespace: 'default'
+#     manifests: '$(Pipeline.Workspace)/manifest/deploy.yaml'
+#     containers: 'SampleApp01.azurecr.io/testcicdrepo:$(Build.BuildId)'
 
 - task: HelmInstaller@0
   inputs:
