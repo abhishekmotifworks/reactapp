@@ -65,15 +65,14 @@ steps:
     chartPath: 'mycharts'
     chartVersion: '$(Build.BuildId)'
 
-- task: HelmDeploy@0
+- task: Bash@3
   inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscription: 'M0086 (75078e35-6d4e-436c-af4a-56b7b23022c6)'
-    azureResourceGroup: 'reactapp'
-    kubernetesCluster: 'aks-reactapp'
-    useClusterAdmin: true
-    namespace: 'default'
-    command: 'delete'
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      kubectl delete service test-app-service
+      kubectl delete deployment test-app
 
 - task: HelmDeploy@0
   inputs:
