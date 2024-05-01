@@ -11,6 +11,8 @@ pool:
 variables:
   - name: System.Debug
     value: true
+  - name: releasename
+    value: $(Build.BuildId)
 
 steps:
 - task: Docker@2
@@ -76,7 +78,7 @@ steps:
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
-    releaseName: 'first'
+    releaseName: '$(Build.BuildId)'
   
 
 # - task: HelmDeploy@0
