@@ -56,7 +56,10 @@ steps:
 #     manifests: '$(Pipeline.Workspace)/manifest/deploy.yaml'
 #     containers: 'SampleApp01.azurecr.io/testcicdrepo:$(Build.BuildId)'
 
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'sed -i ''s|image: SampleApp01.azurecr.io/testcicdrepo:.*|image: SampleApp01.azurecr.io/testcicdrepo:''"$latestTag"''|'' /mycharts/values.yaml'
 
 - task: HelmInstaller@0
   inputs:
