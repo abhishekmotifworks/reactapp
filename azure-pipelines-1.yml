@@ -75,6 +75,7 @@ steps:
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
+    chartVersion: '$(Build.BuildId)'
     releaseName: '$(Build.BuildId)'
   
 
