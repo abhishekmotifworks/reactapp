@@ -76,7 +76,7 @@ steps:
     chartType: 'FilePath'
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
-    releaseName: '$(Build.BuildId)'
+    releaseName: 'first'
   
 
 # - task: HelmDeploy@0
