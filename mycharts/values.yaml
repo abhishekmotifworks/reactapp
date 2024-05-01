@@ -1,5 +1,5 @@
 appName: test-app
 
-image: ampleApp01.azurecr.io/testcicdrepo
+image: SampleApp01.azurecr.io/abhishekmotifworks/reactapp
 
 replica: 3
