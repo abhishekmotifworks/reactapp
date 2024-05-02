@@ -79,7 +79,7 @@ steps:
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
     releaseName: 'myrelease'
-    arguments: '--values /mycharts/values.yaml --values /mycharts/values-dev.yaml'
+    arguments: '--values $(System.DefaultWorkingDirectory)/mycharts/values.yaml --values $(System.DefaultWorkingDirectory)/mycharts/values-dev.yaml'
 
   
 
