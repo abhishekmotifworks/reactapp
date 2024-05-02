@@ -79,7 +79,8 @@ steps:
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
     releaseName: 'myrelease'
-    overrideValues: 'image.tag=$(Build.BuildId)'
+    arguments: '--values values.yaml --values values-dev.yaml'
+
   
 
 # - task: HelmDeploy@0
