@@ -82,7 +82,7 @@ steps:
     chartVersion: '$(Build.BuildId)'
     releaseName: 'myrelease'
     overrideValues: 'image.tag=$(Build.BuildId)'
-    arguments: '---values $(System.DefaultWorkingDirectory)/mycharts/values-dev.yaml'
+    arguments: '--values $(System.DefaultWorkingDirectory)/mycharts/values-dev.yaml'
 
   
 
