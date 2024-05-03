@@ -81,7 +81,7 @@ steps:
     chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
     releaseName: 'myrelease'
-    overrideValues: 'image.tag=$(Build.BuildId)'
+    overrideValues: 'image.tag="$(Build.BuildId)"'
     arguments: '--values $(System.DefaultWorkingDirectory)/mycharts/values-dev.yaml'
 
   
