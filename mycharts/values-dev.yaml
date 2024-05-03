@@ -1,5 +1,5 @@
 appName: test-app-dev
 
-image: SampleApp01.azurecr.io/testcicdrepo:latest
+image: SampleApp01.azurecr.io/testcicdrepo
 
 replica: 2
