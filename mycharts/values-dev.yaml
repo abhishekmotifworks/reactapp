@@ -2,4 +2,6 @@ appName: test-app-dev
 
 image: SampleApp01.azurecr.io/testcicdrepo
 
+tag:
+
 replica: 2
