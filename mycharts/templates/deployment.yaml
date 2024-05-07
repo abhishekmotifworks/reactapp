@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.appName }}
-        image: {{ .Values.image }}:{{ .Values.image.tag}}
+        image: {{ .Values.image.repo }}:{{ .Values.image.tag}}
         imagePullPolicy: Always
         ports:
           - containerPort: 3000
