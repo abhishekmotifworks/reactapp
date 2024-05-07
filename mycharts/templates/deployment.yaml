@@ -11,10 +11,12 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
+      annotations:
+        timestamp: "{{ now | date "20060102150405" }}"
     spec:
       containers:
       - name: {{ .Values.appName }}
-        image: SampleApp01.azurecr.io/testcicdrepo:18570
+        image: SampleApp01.azurecr.io/testcicdrepo
         imagePullPolicy: Always
         ports:
           - containerPort: 3000
