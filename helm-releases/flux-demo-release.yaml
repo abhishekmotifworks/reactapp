@@ -11,4 +11,4 @@ spec:
   chart:
     git: https://github.com/abhishekmotifworks/reactapp
     path: mycharts
-    ref: fluxcd-demo
+    ref: main
