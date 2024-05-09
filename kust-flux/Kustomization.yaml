@@ -7,5 +7,6 @@ spec:
   interval: 1m
   path: ./release-flux
   prune: true
+  name: https://github.com/abhishekmotifworks/reactapp
   sourceRef:
     kind: GitRepository
