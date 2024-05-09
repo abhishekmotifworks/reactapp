@@ -8,4 +8,4 @@ spec:
   path: ./release-flux
   prune: true
   sourceRef:
-    kind: HelmRepository
+    kind: GitRepository
