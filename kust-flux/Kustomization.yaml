@@ -9,4 +9,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: https://github.com/abhishekmotifworks/reactapp
+    name: https://github.com/abhishekmotifworks/reactapp.git
