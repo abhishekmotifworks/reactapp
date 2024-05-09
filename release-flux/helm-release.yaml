@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reactapp
+  namespace: flux-system
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: mycharts
+      sourceRef:
+        kind: HelmRepository
+        name: mycharts
