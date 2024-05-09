@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./
+  path: ./release-flux
   prune: true
   sourceRef:
     kind: HelmRepository
