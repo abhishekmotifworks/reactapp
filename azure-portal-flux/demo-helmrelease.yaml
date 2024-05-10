@@ -8,6 +8,7 @@ spec:
     spec:
       chart: mycharts
       version: 1.0.0
+      releaseName: testrelease
       sourceRef:
         kind: GitRepository
         name: aks-reactapp
