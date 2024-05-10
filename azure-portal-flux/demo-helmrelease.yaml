@@ -12,10 +12,4 @@ spec:
         kind: GitRepository
         name: aks-reactapp
   releaseName: testrelease
-  install:
-    crds: Create
-    createNamespace: true
   interval: 1m0s
-  targetNamespace: dev
-  upgrade:
-    crds: CreateReplace
