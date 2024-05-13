@@ -1,5 +1,10 @@
 terraform {
-backend "azure" {}
+backend "azure" {
+    resource_group_name = "reactapp"
+    storage_account_name = "reactappstorageacc"
+    container_name = "reactappcontainer"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
