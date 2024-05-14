@@ -12,4 +12,10 @@ spec:
         kind: GitRepository
         name: aks-reactapp
   releaseName: aks-reactapp
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
   interval: 1m0s
