@@ -1,5 +1,5 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: Gitmpository
+kind: Gitrepository
 metadata:
   name: aks-reactapp
   namespace: flux-system
