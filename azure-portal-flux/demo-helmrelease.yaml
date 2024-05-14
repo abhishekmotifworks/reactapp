@@ -11,5 +11,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: aks-reactapp
-  releaseName: testrelease
+  releaseName: aks-reactapp
   interval: 1m0s
