@@ -9,7 +9,7 @@ spec:
       chart: mycharts
       version: 1.0.0
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: aks-reactapp
   releaseName: testrelease
   interval: 1m0s
