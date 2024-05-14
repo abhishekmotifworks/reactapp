@@ -1,1 +1,12 @@
-
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dev-user-binding
+  namespace: dev-space
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: dev-user
+subjects:
+- kind: Group
+  namespace: dev
