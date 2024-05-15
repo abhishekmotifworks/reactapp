@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
   labels: 
     app.kubernetes.io/managed-by: Helm
-    meta.helm.sh/release-namespace: flux-ns
+    meta.helm.sh/release-namespace: flux-system
     meta.helm.sh/release-name: flux
 spec:
   selector:
