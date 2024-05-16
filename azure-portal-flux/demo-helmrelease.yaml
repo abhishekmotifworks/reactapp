@@ -16,11 +16,11 @@ spec:
   interval: 1m0s
   postRenderers:
     - kustomize:
-      patchesJson6902:
-        - patch:
-            - op: add
-            path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
-            value: enabled
-        target: 
-          kind: Deployment
-          name: test-app
+        patchesJson6902:
+          - patch:
+              - op: add
+                path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
+                value: enabled
+            target: 
+            kind: Deployment
+            name: test-app
