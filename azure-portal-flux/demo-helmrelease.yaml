@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
   annotations:
     clusterconfig.azure.com/use-managed-source: "true"
+    helm.toolkit.fluxcd.io/driftDetection: enabled
 spec:
   chart:
     spec:
@@ -14,13 +15,13 @@ spec:
         name: aks-reactapp
   releaseName: aks-reactapp
   interval: 1m0s
-  postRenderers:
-    - kustomize:
-        patchesJson6902:
-          - patch:
-              - op: add
-                path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
-                value: enabled
-            target: 
-              kind: Deployment
-              name: test-app
+  # postRenderers:
+  #   - kustomize:
+  #       patchesJson6902:
+  #         - patch:
+  #             - op: add
+  #               path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
+  #               value: enabled
+  #           target: 
+  #             kind: Deployment
+  #             name: test-app
