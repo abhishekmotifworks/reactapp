@@ -14,3 +14,7 @@ spec:
         name: aks-reactapp
   releaseName: aks-reactapp
   interval: 1m0s
+  values:
+    image:
+      repository: SampleApp01.azurecr.io/testcicdrepo
+      tag: latest
