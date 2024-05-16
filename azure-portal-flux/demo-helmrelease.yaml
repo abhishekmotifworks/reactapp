@@ -22,5 +22,5 @@ spec:
                 path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
                 value: enabled
             target: 
-            kind: Deployment
-            name: test-app
+              kind: Deployment
+              name: test-app
