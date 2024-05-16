@@ -15,7 +15,7 @@ spec:
   releaseName: aks-reactapp
   interval: 1m0s
   postRenderers:
-    kustomize:
+    - kustomize:
       patchesJson6902:
         - patch:
             - op: add
