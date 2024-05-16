@@ -8,3 +8,7 @@ spec:
   url: https://github.com/abhishekmotifworks/reactapp
   ref:
     branch: flux-cd
+  values:
+    helmOperator:
+      featureFlags:
+        DetectDrift: true
