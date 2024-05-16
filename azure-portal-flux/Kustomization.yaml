@@ -5,4 +5,4 @@ metadata:
 resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
--demo-configmap.yaml
+- demo-configmap.yaml
