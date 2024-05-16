@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
   annotations:
     clusterconfig.azure.com/use-managed-source: "true"
-    helm.toolkit.fluxcd.io/driftDetection: enabled
+    timestamp: "{{ now | date "20060102150405" }}"
 spec:
   chart:
     spec:
