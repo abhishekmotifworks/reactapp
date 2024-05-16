@@ -14,14 +14,3 @@ spec:
         name: aks-reactapp
   releaseName: aks-reactapp
   interval: 1m0s
-  postRenderers:
-  - kustomize:
-      patches:
-        - target:
-            version: v1
-            kind: Deployment
-            name: test-app
-          patch: |
-            - op: add
-              path: /metadata/annotations/helm.toolkit.fluxcd.io~1driftDetection
-              value: enabled
