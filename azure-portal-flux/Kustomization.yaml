@@ -6,7 +6,7 @@ resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
 patches:
-  - patch: |
+  - patch:
       # Enable drift detection and correction
       - op: add
         path: /spec/template/spec/containers/0/args/-
