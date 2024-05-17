@@ -78,7 +78,7 @@ steps:
     namespace: 'my-namespace'
     command: 'upgrade'
     chartType: 'FilePath'
-    chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-$(Build.BuildId).tgz'
+    chartPath: '$(Build.ArtifactStagingDirectory)/mycharts-1-$(Build.BuildId).tgz'
     chartVersion: '$(Build.BuildId)'
     releaseName: 'myrelease'
     arguments: '--values $(System.DefaultWorkingDirectory)/mycharts/values-dev.yaml'
