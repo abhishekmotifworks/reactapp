@@ -12,8 +12,8 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
-     annotations:
-       timestamp: "{{ now | date "20060102150405" }}"
+      annotations:
+        timestamp: "{{ now | date "20060102150405" }}"
     spec:
       containers:
       - name: {{ .Values.appName }}
