@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.appName }}
-        image: SampleApp01.azurecr.io/testcicdrepo:latest
+        image: SampleApp01.azurecr.io/testcicdrepo:18616
         imagePullPolicy: Always
         ports:
           - containerPort: 3000
