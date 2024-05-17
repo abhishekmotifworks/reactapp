@@ -3,6 +3,6 @@ version: v1
 metadata:
   name: my-configmap
   namespace: flux-system
-fieldSpecs:
+- fieldSpecs:
   - path: ./demo-helmrelease.yaml
   kind: HelmRelease
