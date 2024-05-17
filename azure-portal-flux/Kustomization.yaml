@@ -5,7 +5,7 @@ metadata:
 resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
-patches:
+- patches:
   - patch:
       # Enable drift detection and correction
       - op: add
