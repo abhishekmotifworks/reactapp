@@ -15,5 +15,5 @@ spec:
   releaseName: aks-reactapp
   interval: 1m0s
   valuesFrom:
-    - kind: ConfigMap
+    kind: ConfigMap
     name: podinfo-values
