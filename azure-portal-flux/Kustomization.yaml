@@ -5,3 +5,9 @@ metadata:
 resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
+configMapGenerator:
+  - name: podinfo-values
+    files:
+      - values.yaml=values-dev.yaml
+configurations:
+  - kust-config.yaml
