@@ -16,4 +16,4 @@ spec:
   interval: 1m0s
   valuesFrom:
     kind: ConfigMap
-    name: podinfo-values
+    name: my-configmap
