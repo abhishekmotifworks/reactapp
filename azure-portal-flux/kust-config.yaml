@@ -2,5 +2,5 @@ nameReference:
 - kind: ConfigMap
   version: v1
   fieldSpecs:
-  - path: ./demo-release.yaml
+  - path: ./demo-helmrelease.yaml
     kind: HelmRelease
