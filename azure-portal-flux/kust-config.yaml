@@ -1,6 +1,5 @@
 kind: ConfigMap
 version: v1
-metadata:
 - fieldSpecs:
   - path: ./demo-helmrelease.yaml
   kind: HelmRelease
