@@ -6,7 +6,7 @@ resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
 configMapGenerator:
-  - name: podinfo-values
+  - name: my-configmap
     files:
       - values.yaml=values-dev.yaml
 configurations:
