@@ -1,9 +1,8 @@
-nameReference:
-- kind: ConfigMap
-  version: v1
-  metadata:
-    name: my-configmap
-    namespace: flux-system
-  fieldSpecs:
+kind: ConfigMap
+version: v1
+metadata:
+  name: my-configmap
+  namespace: flux-system
+fieldSpecs:
   - path: ./demo-helmrelease.yaml
-    kind: HelmRelease
+  kind: HelmRelease
