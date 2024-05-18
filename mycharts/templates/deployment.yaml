@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}
-  namespace: flux-system
+  namespace: my-namespace
 spec:
   replicas: {{ .Values.replica }}
   selector:
