@@ -5,7 +5,7 @@ metadata:
   labels: 
     app.kubernetes.io/managed-by: Helm
     meta.helm.sh/release-namespace: my-namespace
-    meta.helm.sh/release-name: flux
+    meta.helm.sh/release-name: myrelease
 spec:
   selector:
     app: {{ .Values.appName }}
