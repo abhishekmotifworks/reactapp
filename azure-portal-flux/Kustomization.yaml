@@ -5,9 +5,3 @@ metadata:
 resources:
 - demo-helmrelease.yaml
 - demo-gitrepo.yaml
-configMapGenerator:
-  - name: my-configmap
-    files:
-      - values.yaml=values-dev.yaml
-configurations:
-  - kust-config.yaml
