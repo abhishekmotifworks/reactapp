@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  namespace: flux-system
-  name: my-configmap
-fieldSpecs:
-  path: ./demo-helmrelease.yaml
-  kind: HelmRelease
